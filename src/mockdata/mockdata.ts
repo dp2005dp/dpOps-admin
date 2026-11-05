@@ -30,7 +30,7 @@ export interface ProjectInterface {
   budget: number;
   projectStatus: string;
   progress : number;
-  file: File | null;
+  projectFile : File | undefined;
   roles : string
   createdAt : string
 }

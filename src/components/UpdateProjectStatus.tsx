@@ -23,7 +23,7 @@ interface UpdateStatus {
 const UpdateProjectModal = ({onClose , projectId , ongetData } : UpdateStatus) => {
     
     const [updateStatus , setStatus] = useState('')
-    const getStatus  = (name : string , value : string) => {
+    const getStatus  = (value : string) => {
     setStatus(value)
     ongetData(value)
     }

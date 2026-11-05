@@ -133,7 +133,9 @@ interface employeeInterface {
         return filters
     }
    
-    const selectrole =(name : string ,value : string) => {
+  
+  
+    const selectrole =(value : string) => {
           onSelect(value)
     }
     

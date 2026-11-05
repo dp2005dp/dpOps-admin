@@ -154,7 +154,7 @@ const ClientDetails = ({clientData} : ClientProps) => {
                                   <Status status={eachdata.projectStatus}/>
                                 </div>
                                     <button
-                                    onClick={(e) => navigate(`/projectDetails/${eachdata.projectId}`)}
+                                    onClick={() => navigate(`/projectDetails/${eachdata.projectId}`)}
                                     type="button" className="bg-[#ffffff] h-[30px] w-[80px] flex items-center gap-2  col-span-1 hover:scale-95 transition duration-300 ease-int-out border-1 border-[#4f7cff]/50  items-center rounded-[5px] cursor-pointer p-3 shadow-md">
                                       <MdRemoveRedEye className="h-[50px] w-[50px] text-[#7A4CF5]"/>
                                       <h1 className="text-[#7A4CF5] text-[15px] font-dm-medium">View</h1>

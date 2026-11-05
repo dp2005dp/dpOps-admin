@@ -9,18 +9,6 @@ import type { ProjectForm } from "../mockdata/mockdata";
 import  { Projects} from "../services/AdminAccess";
 import toast from "react-hot-toast";
 
-const existingClients = [
-  "TechNova Solutions",
-  "CloudX Technologies",
-  "Orbit Labs",
-  "Vertex Digital",
-  "GreenTech",
-  "Nexora Systems",
-  "PixelCraft Studio",
-  "BlueWave Technologies",
-  "CodeSphere Solutions",
-  "VertexOne Consulting",
-];
 
 const projectTypes = [
   "Web Development",

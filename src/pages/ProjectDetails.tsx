@@ -58,7 +58,8 @@ const ProjectDetails = () => {
         year: "numeric", 
     });
     };
-   
+    
+
 
     const getProjectlength = projectProgress.filter(p => p.projectId === Number(id))
                         
@@ -124,9 +125,10 @@ const ProjectDetails = () => {
                         title="Budget"
                         value={data?.budget}
                      />
+              
               </div>
            
-           <div className="grid grid-cols-1 md:grid-cols-3  md:gap-10">
+           <div className="grid grid-cols-1 xl:grid-cols-3  md:gap-10">
             <div className="shadow-md mb-5 rounded-[8px] p-3 bg-[#ffffff]">
                 <h1 className="text-[#112F62] font-dm-bold mb-1 tracking-[-1px] text-[20px]">Client</h1>
                 <ClientDetails value={data?.clientName} title={data?.ClientCompany} color="#7A4CF5" Icon={IoPersonOutline}/>
@@ -196,6 +198,10 @@ const ProjectDetails = () => {
               </div>
             
             </div>
+
+            {
+                assignMembers.length === 0 ? '' :
+          
             
             <div className="grid grid-cols-1 2xl:grid-cols-2 gap-8">
              <div className="shadow-md mb-5 mt-5 rounded-[8px] p-3 bg-[#ffffff]">
@@ -249,6 +255,7 @@ const ProjectDetails = () => {
                 </div>
 
             </div>
+             }
 
             {
                 showStatus && (

@@ -17,7 +17,6 @@ import {motion} from "motion/react"
 import { useLocation , useNavigate } from "react-router-dom"
 import PublicRoutes from "./components/PublicRoutes"
 import ProductRoutes from "./components/ProductRoutes"
-import { MdDashboard } from "react-icons/md";
 const App = () => {
     const location = useLocation()
     const navigation = useNavigate()
