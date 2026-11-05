@@ -36,4 +36,17 @@ Provides client management functionality, allowing administrators to add, view, 
 
 <img width="1912" height="895" alt="image" src="https://github.com/user-attachments/assets/41afb657-2727-4847-a6ee-f0100ab0dc92" />
 
+Empty States :
+
+<img width="1901" height="901" alt="image" src="https://github.com/user-attachments/assets/f3efced1-d165-4273-a293-bf4a9caaa298" />
+
+<img width="1918" height="910" alt="Screenshot 2026-11-05 005730" src="https://github.com/user-attachments/assets/89e7feda-85a0-40a5-9836-ac22a00f925d" />
+
+<img width="1913" height="907" alt="Screenshot 2026-11-05 005742" src="https://github.com/user-attachments/assets/4ae6e380-9dbf-4fa0-9a06-c0306ac13249" />
+
+<img width="387" height="737" alt="Screenshot 2026-11-05 005819" src="https://github.com/user-attachments/assets/0be6d47c-56e4-4c8d-b555-927a2511d644" />
+
+<img width="1918" height="897" alt="Screenshot 2026-11-05 005706" src="https://github.com/user-attachments/assets/ce588f53-5aef-4ad2-85ab-c81023b75386" />
+
+
 Thank You...DpOps...Happy Coding...
