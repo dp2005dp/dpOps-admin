@@ -1,75 +1,39 @@
-# React + TypeScript + Vite
+Login 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img width="1890" height="893" alt="image" src="https://github.com/user-attachments/assets/1bb24123-cbf1-4a51-858a-6b63ba753829" />
 
-Currently, two official plugins are available:
+Dashboard
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Provides an overview of business operations, displaying key statistics such as total projects, employees, clients, active projects, and project analytics.
 
-## React Compiler
+<img width="1900" height="890" alt="image" src="https://github.com/user-attachments/assets/df102f54-90f3-4492-87d0-06e7c1ab5e27" />
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Projects & Project Progress
 
-## Expanding the ESLint configuration
+Allows administrators to create, manage, and monitor projects. Displays project details, assigned employees, deadlines, and current progress.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+<img width="1910" height="907" alt="image" src="https://github.com/user-attachments/assets/abe280c5-f998-4ac1-a1a4-3d97ac7b8285" />
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Employees
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Enables administrators to manage employee information, including employee profiles, contact details, departments, roles, and employment information.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+<img width="1917" height="887" alt="image" src="https://github.com/user-attachments/assets/3fe9a804-78c7-40a0-a336-872c259472bd" />
 
-```
+<img width="1901" height="901" alt="image" src="https://github.com/user-attachments/assets/ca70f8ac-3f11-4fd9-9c3f-aaccd181ecb0" />
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Assign Projects
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Allows administrators to assign projects to employees, manage project responsibilities, and coordinate team assignments.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+<img width="1917" height="902" alt="image" src="https://github.com/user-attachments/assets/fd3bb11d-6213-4455-8633-e090063f8288" />
 
-```
+<img width="1890" height="908" alt="image" src="https://github.com/user-attachments/assets/0834584a-3def-4aad-9df4-b0699a4d6a02" />
+
+Clients
+
+Provides client management functionality, allowing administrators to add, view, update, and manage client information and their associated projects.
+
+<img width="1912" height="895" alt="image" src="https://github.com/user-attachments/assets/41afb657-2727-4847-a6ee-f0100ab0dc92" />
+
+Thank You...DpOps...Happy Coding...
