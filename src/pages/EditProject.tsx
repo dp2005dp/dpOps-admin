@@ -85,29 +85,16 @@ const EditProject = () => {
 
     const { id } = useParams();
 
-
-    // Form state
     const [formData, setFormData] = useState<ProjectForm>(IntialFormData);
 
-
-    // Existing backend file name
     const [existingFile, setExistingFile] = useState("");
 
-
-    // Loading state
     const [loading, setLoading] = useState(false);
 
-
-    // Selected new file
     const projectFile = formData.file instanceof File
         ? formData.file
         : null;
 
-
-
-    // ==================================
-    // FETCH PROJECT DETAILS
-    // ==================================
 
     const fetchProject = async () => {
 
@@ -183,9 +170,6 @@ const EditProject = () => {
 
     };
 
-
-
-    // Fetch automatically when page opens
     useEffect(() => {
 
         if (id) {
@@ -194,12 +178,6 @@ const EditProject = () => {
 
     }, [id]);
 
-
-
-
-    // ==================================
-    // INPUT CHANGE
-    // ==================================
 
     const onGetData = (name: string, value: string) => {
 
@@ -214,12 +192,6 @@ const EditProject = () => {
     };
 
 
-
-
-    // ==================================
-    // PROJECT DESCRIPTION
-    // ==================================
-
     const projectDescripition = (value: string) => {
 
         setFormData((prev) => ({
@@ -232,12 +204,6 @@ const EditProject = () => {
 
     };
 
-
-
-
-    // ==================================
-    // FILE UPLOAD
-    // ==================================
 
     const onFile = (e: React.ChangeEvent<HTMLInputElement>) => {
 
@@ -255,11 +221,6 @@ const EditProject = () => {
 
 
 
-
-    // ==================================
-    // REMOVE SELECTED NEW FILE
-    // ==================================
-
     const removeSelectedFile = () => {
 
         setFormData((prev) => ({
@@ -272,12 +233,6 @@ const EditProject = () => {
 
     };
 
-
-
-
-    // ==================================
-    // SELECT PROJECT ROLES
-    // ==================================
 
     const SelectedRoles = (role: string) => {
 
@@ -295,12 +250,6 @@ const EditProject = () => {
 
     };
 
-
-
-
-    // ==================================
-    // VALIDATION
-    // ==================================
 
     const Validiation = () => {
 
@@ -375,11 +324,6 @@ const EditProject = () => {
 
 
 
-
-    // ==================================
-    // SUBMIT UPDATED PROJECT
-    // ==================================
-
     const onSubmitData = async (e: React.FormEvent) => {
 
         e.preventDefault();
@@ -429,23 +373,10 @@ const EditProject = () => {
 
             });
 
-
-            // Project ID
             data.append("projectId", String(id));
             
             toast.error('Server Down Try Again Later...')
 
-            // UPDATE PROJECT
-            // const response = await Projects.UpdateProject(data);
-
-
-            // if (response.status === 200) {
-
-            //     toast.success(response.data.message);
-
-            //     navigate("/projects");
-
-            // }
 
         } catch (error) {
 
@@ -457,24 +388,12 @@ const EditProject = () => {
     };
 
 
-
-
-    // ==================================
-    // CLEAR FORM
-    // ==================================
-
     const clearForm = () => {
 
         setFormData(IntialFormData);
 
     };
 
-
-
-
-    // ==================================
-    // RETURN UI
-    // ==================================
 
     return (
 
@@ -485,11 +404,11 @@ const EditProject = () => {
 
                 {/* HEADER */}
 
-                <div className="md:flex sticky top-0 left-0 right-0 z-50 items-center justify-between p-3 bg-[#F6F8FD]">
+                <div className="md:flex items-center justify-between p-3 bg-[#F6F8FD]">
 
                     <button
                         type="button"
-                        className="h-[40px] p-3 mt-5 mb-5 flex items-center gap-3 w-[100px] transition duration-300 ease-in-out bg-white rounded-[10px] cursor-pointer hover:scale-95 border border-[#7A4CF5] text-[#7A4CF5] font-dm-medium shadow-xl"
+                        className="h-[40px] p-3  mb-5 flex items-center gap-3 w-[100px] transition duration-300 ease-in-out bg-white rounded-[10px] cursor-pointer hover:scale-95 border border-[#7A4CF5] text-[#7A4CF5] font-dm-medium shadow-xl"
                         onClick={() => navigate("/projects")}
                     >
 
@@ -519,7 +438,7 @@ const EditProject = () => {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="h-[40px] w-[120px] transition duration-300 ease-in-out bg-gradient-to-br from-[#7a4cf5] to-[#4f7cff] font-dm-medium rounded-[10px] cursor-pointer hover:scale-95 text-white shadow-xl disabled:opacity-50"
+                            className="h-[40px] w-[120px] transition duration-300 ease-in-out bg-gradient-to-br text-[15] from-[#7a4cf5] to-[#4f7cff] font-dm-medium rounded-[10px] cursor-pointer hover:scale-95 text-white shadow-xl disabled:opacity-50"
                         >
 
                             Update Project

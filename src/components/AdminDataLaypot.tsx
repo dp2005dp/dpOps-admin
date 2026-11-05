@@ -28,7 +28,7 @@ const AdminDataLaypot = ({children} : {children : ReactNode}) => {
        
               const [resProjects , resAssignProjects , resEmployess , resProgress]= await  Promise.all([Projects.getAllProjects() , assignProject.getAllEmployess() , addEmployee.getAllEmployess() , assignProject.getProjectProgress()])   
        
-             if(resProjects.status === 200 && resAssignProjects.status === 200 && resEmployess.status === 200) {
+             if(resProjects.status === 200 && resAssignProjects.status === 200 && resEmployess.status === 200 &&  resProgress.status === 200) {
                 
                setProjectData(resProjects.data.data)
                setAssignMembers(resAssignProjects.data.data)

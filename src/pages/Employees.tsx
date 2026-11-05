@@ -39,6 +39,7 @@ const childCardVarients:Variants = {
      }
 }
 
+
 const ProjectRoles = [
   "All Roles",
   "Frontend Developer",
@@ -135,7 +136,7 @@ interface employeeInterface {
    
   
   
-    const selectrole =(value : string) => {
+    const selectrole =(_name : string , value : string) => {
           onSelect(value)
     }
     

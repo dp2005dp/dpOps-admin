@@ -14,9 +14,10 @@ import { TiHome } from "react-icons/ti";
 import {Routes ,Route} from "react-router-dom"
 import { useState } from "react"
 import {motion} from "motion/react"
-import { useLocation , useNavigate } from "react-router-dom"
+import { useLocation , useNavigate , Outlet } from "react-router-dom"
 import PublicRoutes from "./components/PublicRoutes"
 import ProductRoutes from "./components/ProductRoutes"
+import AdminDataLaypot from './components/AdminDataLaypot.tsx'
 const App = () => {
     const location = useLocation()
     const navigation = useNavigate()
@@ -66,6 +67,10 @@ const App = () => {
             </Route>
             
             <Route element={<ProductRoutes/>}>
+             
+             <Route element={<AdminDataLaypot>
+                 < Outlet />
+             </AdminDataLaypot>}>
              <Route path="/" element={<Dasboard />}/>
               <Route path="/clients" element={<Clients />}/>
               <Route path="/employees" element={<Employess />}/>
@@ -75,6 +80,7 @@ const App = () => {
               <Route path="/projectDetails/:id" element={<ProjectDetails />}/>
               <Route path="/assignProjects" element={<AssignProjects />}/>
               <Route path="/editProject/:id" element={<EditProject />}/>
+              </Route>
             </Route>
        </Routes>
 

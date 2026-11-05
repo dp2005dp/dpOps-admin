@@ -44,9 +44,7 @@ const Login =() => {
           localStorage.setItem('adminToken' , response.data.token)
           navigate('/')
        }
-       console.log(response.data)
-        
-        
+            
 
         }
         catch(e){

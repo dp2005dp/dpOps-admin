@@ -22,8 +22,15 @@ import UpdateProjectModal from "../components/UpdateProjectStatus";
 import { RxUpdate } from "react-icons/rx";
 import ProjectTypeIcons from "../components/ProjectTypeIcons";
 import { useApiData } from "../components/AdminDataLaypot";
+import PageLoader from "../components/PageLoader";
+import PageNotFound from "../components/PageNotFound";
 const colors = ['#16a05a' , '#4f7cff' , '#f5b73b' , '#ef4444' , '#9aa3c7' ]
 
+const renderState = {
+  loading : 'Loading',
+  success : 'Success',
+  failure : 'Failure'
+}
 
 const ProjectDetails = () => {
     const navigate = useNavigate()
@@ -31,45 +38,64 @@ const ProjectDetails = () => {
     const {id} = useParams()
     const [data , setProjectData] = useState<ProjectInterface>()
     const [assignMembers , setMembers] = useState<assignProjectmembers[]>([])
-    const [showStatus ,  setStatus] = useState(false)
-    const [selectStstus , setSelectStatus] = useState('')
+  
+    const [status , setStateStaus] = useState(renderState.loading)
+    
+    
     const fetchData = async () => {
-      const response = await Projects.getProject(Number(id))
-      setProjectData(response.data.data)
+         
+        try {
+            setStateStaus(renderState.loading)
+            const [resProject , resMembers] = await Promise.all([Projects.getProject(Number(id)) , assignProject.getEmployess(Number(id))]) 
+            
+            if (resProject.status === 200 && resMembers.status === 200) {
+              setProjectData(resProject.data.data)
+              setMembers(resMembers.data.data)
+              setStateStaus(renderState.success)
+            }
+            
+            
+        }
+        catch(e){
+            setStateStaus(renderState.failure)
+        }
+     
     }
    
-    const teachAssgnProjectMembers = async() => {
-        const response = await assignProject.getEmployess(Number(id))
-
-        setMembers(response.data.data)
-    }
 
     useEffect(() => {
-        fetchData(),
-        teachAssgnProjectMembers()
-    } , [])
+        fetchData()
+    } , [id])
     
-
-    const formatDate = (date?: string) => {
-    if (!date) return "";
-    return new Date(date).toLocaleDateString("en-GB", {
-        day: "2-digit",
-        month: "short",
-        year: "numeric", 
-    });
-    };
-    
-
-
-    const getProjectlength = projectProgress.filter(p => p.projectId === Number(id))
+     const getProjectlength = projectProgress.filter(p => p.projectId === Number(id))
                         
     const getProjectProgress = getProjectlength.reduce((sum , value) => sum + value.progress , 0)
 
     const progress = Math.round( getProjectProgress / getProjectlength.length)
     
-    const getStatus = (value:string) => {
-            setSelectStatus(value)
+    const pageRender = () => {
+    switch(status) {
+       case renderState.loading : 
+       return <div className="flex flex-col justify-center h-[50vh] items-center"><PageLoader /></div> 
+      
+       case renderState.success : 
+       return <ProjectDetailsJsx data={data} assignMembers={assignMembers} progress={progress} id={Number(id)}/>
+ 
+      case renderState.failure :
+     return  <PageNotFound />
+      
+      default :
+      return null
     }
+}
+
+   
+    
+
+
+   
+    
+   
 
     return (
          <div className="h-[calc(100dvh-80px)] overflow-y-auto scrollbar-smooth hide-scrollbar p-3">
@@ -79,6 +105,40 @@ const ProjectDetails = () => {
                 >
                 <LuMoveLeft className="h-[20px] w-[20px]"/>   <p> Back</p>
             </button>
+
+               {pageRender()}
+             
+           </div> 
+    )
+}
+
+interface pageProps {
+data  : ProjectInterface | undefined
+assignMembers :  assignProjectmembers[]
+progress  : number
+id : number
+}
+
+
+const ProjectDetailsJsx = ({data , assignMembers , progress , id} : pageProps) => {
+     const navigate = useNavigate()
+     const [showStatus ,  setStatus] = useState(false)
+     const [selectStstus , setSelectStatus] = useState('')
+
+     const getStatus = (value:string) => {
+            setSelectStatus(value)
+    }
+
+     const formatDate = (date?: string) => {
+        if (!date) return "";
+        return new Date(date).toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "short",
+            year: "numeric", 
+        });
+        };
+     return (
+        <div>
               <div className="shadow-md mb-5 rounded-[8px] p-3 bg-[#ffffff]">
                   <div className="xl:flex items-start mb-5 justify-between">
                      <div className="md:flex items-start gap-3">
@@ -264,12 +324,8 @@ const ProjectDetails = () => {
                      </div>
                 )
             }
-           </div>
-
-        
-           
-
-    )
+        </div>
+     )
 }
 
 interface Props {

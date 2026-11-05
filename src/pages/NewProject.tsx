@@ -227,8 +227,8 @@ const AddNewProject = () =>  {
     return (
     <div className="h-[calc(100dvh-80px)] w-full overflow-y-auto  hide-scrollbar scrollbar-smooth p-3 bg-[#F6F8FD]">
       <form onSubmit={onSubmitData}>    
-        <div className="md:flex sticky top-0 left-0 right-0 z-50 items-center fixed  justify-between p-3">
-          <button  type="button" className="h-[40px] p-3 mt-5 mb-5 flex items-center gap-3 w-[100px] transition duration-300 ease-in-out bg-white rounded-[10px] cursor-pointer hover:scale-95  hover:border-1 border-[#7A4CF5] text-[#7A4CF5] font-dm-medium shadow-xl"
+        <div className="md:flex items-center  justify-between p-3">
+          <button  type="button" className="h-[40px] p-3  mb-5 flex items-center gap-3 w-[100px] transition duration-300 ease-in-out bg-white rounded-[10px] cursor-pointer hover:scale-95  hover:border-1 border-[#7A4CF5] text-[#7A4CF5] font-dm-medium shadow-xl"
           onClick={() => navigate('/projects')}
           >
                <LuMoveLeft className="h-[20px] w-[20px]"/>   <p> Back</p>

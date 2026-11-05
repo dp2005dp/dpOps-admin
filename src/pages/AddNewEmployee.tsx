@@ -241,7 +241,7 @@ const AddNewEmployee = () => {
                      <button type="button" className="h-[40px] w-[100px] transition duration-300 ease-in-out bg-[#ffffff] rounded-[10px] cursor-pointer font-dm-medium hover:scale-95 text-[#000000]  shadow-xl"
                        onClick={() =>navigate('/employees')}
                      >
-                           Cancel
+                        Back
                      </button>
 
                      <button type="submit" className="flex p-2 items-center gap-2 duration-300 ease-in-out  hover:scale-95 bg-gradient-to-br from-[#7a4cf5] to-[#4f7cff] cursor-pointer rounded-[5px] h-[40px] w-[100px]">
@@ -441,7 +441,7 @@ const AddNewEmployee = () => {
                         <input type='text' 
                            placeholder="e.g.101"
                            value={employeesData.username}
-                           className="outline-none transition"
+                           className="outline-none transition w-[100%]"
                            onChange={(e) => {EmployeeId(e.target.value)}}
                            
                            />
